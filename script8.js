@@ -88,7 +88,7 @@ window.addEventListener('load', () => {
                     </div>
                                     <div class="prod-details">
                         <span>$<span>${product.price}</span></span>
-                        <button class="shop-item-button" type='button'>ADD TO CART</button>
+                        <button class="shop-item-button" type='button' onclick="addToCart(${product.id})">ADD TO CART</button>
                     </div>
                 </div>`
             parentNode.innerHTML += productHtml
@@ -181,8 +181,17 @@ function removeElementFromCartDom(prodId){
 }
 
 window.addEventListener('DOMContentLoaded' ,(e) ={
-axios.get('https://localhost:3000//products').then((data) =>{
+axios.get('http://localhost:3000//products').then((data) =>{
     console.log(data);
 })
 });
+
+function addToCart(productId){
+    axios.post('http://localhost:3000/cart', { productId: prodId}).then(response => {
+           console.log(response);
+        })
+        .catch(err => {
+            console.log(err);
+        });
+}
 
