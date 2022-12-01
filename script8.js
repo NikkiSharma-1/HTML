@@ -181,7 +181,7 @@ function removeElementFromCartDom(prodId){
 }
 
 window.addEventListener('DOMContentLoaded' ,(e) ={
-axios.get('http://localhost:3000//products').then((data) =>{
+ axios.get('http://localhost:3000//products').then((data) =>{
     console.log(data);
 })
 });
@@ -194,4 +194,14 @@ function addToCart(productId){
             console.log(err);
         });
 }
+
+window.addEventListener('DOMContentLoaded' ,(e) => {
+ axios.get('http://localhost:3000//cart' , {productId: prodId})
+ .then(product =>{
+showProductsInCart(product);
+ })
+ .catch(err =>{
+    console.log(err);
+ });
+})
 
