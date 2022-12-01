@@ -180,3 +180,9 @@ function removeElementFromCartDom(prodId){
         showNotification('Succesfuly removed product')
 }
 
+window.addEventListener('DOMContentLoaded' ,(e) ={
+axios.get('https://localhost:3000//products').then((data) =>{
+    console.log(data);
+})
+});
+
