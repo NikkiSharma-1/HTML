@@ -262,6 +262,25 @@ section h2{
     padding:12px;
     cursor: pointer;
 }
+
+#pagination{
+   text-align: center; 
+}
+
+#pagination a{
+    text-decoration: none;
+    color: #006950;
+    padding: 0.5rem;
+    margin: 0 1rem;
+    border: 1px solid #006950;
+}
+
+#pagination a:hover,
+#pagination a:active{
+color: white;
+background: #006950;
+}
+
 .purchase-btn:hover{
     background-color:#18acdd;
 }
