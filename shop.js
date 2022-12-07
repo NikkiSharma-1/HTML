@@ -128,6 +128,12 @@ exports.getOrders = (req, res, next) => {
     path: '/orders',
     pageTitle: 'Your Orders'
   });
+  .then(() => {
+      res.status(200).json({sucess:true, message:"Successfully Ordered"});
+    })
+    .catch(err => {
+		res.status(500).json({sucess:false, message:"Error Occured"})
+	});
 };
 
 exports.getCheckout = (req, res, next) => {
